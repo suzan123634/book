@@ -1,0 +1,11 @@
+<h1>{{ category.title }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<ul>
+{% for product in category.product_set.all %}
+    <li><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></li>
+    <li>{{ product.brand }}</li>
+    <li>{{ product.sales_price }}</li>
+    <img src="{{ product.image.url}}" alt="Nepal_cart">
+{% endfor %}
+</ul>
